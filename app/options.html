@@ -1,24 +1,10 @@
-<!doctype html>
-<html>
-    <head>
-        <!-- build:css styles/vendor.css -->
-        <!-- bower:css -->
-        <!-- endbower -->
-        <!-- endbuild -->
-        <!-- build:css styles/main.css -->
-        <link href="styles/main.css" rel="stylesheet">
-        <!-- endbuild -->
-    </head>
-    <body>
-        <h1>'Allo, 'Allo!</h1>
-                
-        <!-- build:js scripts/vendor.js -->
-        <!-- bower:js -->
-        <!-- endbower -->
-        <!-- endbuild -->
-
-        <!-- build:js scripts/options.js -->
-        <script src="scripts/options.js"></script>
-        <!-- endbuild -->
-    </body>
-</html>
+<div class='container options'>
+    <h1>Choose Your Culvers</h1>
+    <form name="locationform">
+        <input focus type="text" ng-model="storeSearch" placeholder="Search for a location">
+    </form>
+    <ul>
+        <li ng-repeat="store in stores.list | filter: storeSearch" ng-click="selectStore(store.url)">{{store.name}}<span ng-class="{true: 'glyphicon glyphicon-ok', false: ''}[store.url === selectedStore]"></span></li>
+    </ul>
+</div>
+<button class="nav-button" ui-sref='home' autofocus="false"><span class="glyphicon glyphicon-home"></span></button>

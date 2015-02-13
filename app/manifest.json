@@ -25,6 +25,7 @@
   "options_page": "options.html",
   "permissions": [
     "http://localhost:3030/",
-    "http://www.culvers.com/"
+    "http://www.culvers.com/",
+    "storage"
   ]
 }
