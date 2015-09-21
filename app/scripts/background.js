@@ -98,7 +98,7 @@ app.factory('Flavor', function flavorService(Stores, $http, $q, $filter) {
         var self = this;
         $http.get(baseUrl + storePath + '/')
           .success(function(response) {
-            var newFlavor = $(response).find('.restaraunt-fotd-title-text').first().text();
+            var newFlavor = $(response).find('.ModuleRestaurantDetail-fotd').find('h2').text();
             self.flavorCache[storePath] = {
               flavor: newFlavor,
               lastUpdated: Date.now()
